@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+/*扇形基本样式*/
+.pieshape-wrap div,
+.pieshape-wrap span{width: 100%; position: absolute; overflow: hidden;}
+.pieshape-wrap div{height: 50%;}
+.pieshape-wrap span{display: block; height: 100%;}
+.pieshape-wrap span.hide{-webkit-transform:rotateZ(-180deg); visibility: hidden;}
+.pieshape-half-1 span{ -webkit-transform-origin:50% 100%; }
+.pieshape-half-2{top: 50%;}
+.pieshape-half-2 span{-webkit-transform-origin: 50% 0;}

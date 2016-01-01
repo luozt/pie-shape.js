@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>pie-shape.js插件DEMO</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="../pie-shape.css">
+  <style>
+  .test{position: relative; width: 200px; margin: 100px auto 0; height: 200px; border: 1px solid #ccc;}
+  </style>
+</head>
+<body>
+
+  <div>
+
+    <input id="num" tyep="text" placeholder="输入要改变的角度">
+
+    <button id="btn">改变角度</button>
+
+    <button id="btn2">卸载软件功能</button>
+
+  </div>
+
+  <div id="test" class="test"></div>
+
+
+  <script src="../pie-shape.js"></script>
+  <script>
+  (function(){
+    var $$ = function(id){
+      return document.getElementById(id);
+    };
+
+    window.onload = function(){
+      var $num = $$("num");
+
+      var pie1 = new PieShape({
+        parentNode: $$("test"),
+        radius: 100,
+        initialAngle: 145,
+        transition: false
+      });
+
+      $$("btn").onclick = function(){
+         pie1.setAngle(parseInt($num.value));
+      };
+
+      $$("btn2").onclick = function(){
+        pie1.teardown();
+      };
+    };
+
+  }).call(this);
+  </script>
+</body>
+</html>
